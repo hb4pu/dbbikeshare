@@ -22,4 +22,6 @@ spark.sql("drop table if exists silver_trip")
 
 # COMMAND ----------
 
+#attribution: 
+# how to connect to azure synapse in azure databricks  https://joeho.xyz/blog-posts/how-to-connect-to-azure-synapse-in-azure-databricks/
 
