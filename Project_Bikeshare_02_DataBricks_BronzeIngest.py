@@ -33,9 +33,7 @@ df =  df.selectExpr(
 
 #write to bronze delta
 df.write.format("delta").mode("overwrite").save("/delta/bronze/bronze_riders")
-
 #TODO: is this named properly?  shows up without extension within delta\bronze folder, just looks like a folder with parquet files within
-#TODO: why more than one file in bronze_riders when mode = overwrite?  learn how parquet / delta data is stored
 
 # COMMAND ----------
 

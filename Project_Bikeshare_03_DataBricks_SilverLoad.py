@@ -12,7 +12,6 @@ from pyspark.sql.functions import sha2
 dfbronzeriders = spark.read.format("delta") \
     .load("/delta/bronze/bronze_riders")
 
-
 dfbronzeriders = dfbronzeriders.withColumn("row_sha2", sha2("rider_id", 256))
 
 #append data so that delta is updated with changes
