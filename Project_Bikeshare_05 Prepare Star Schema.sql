@@ -18,8 +18,8 @@ CREATE TABLE Fact.Trip(
 	RiderKey INT,
 	TripStartDateKey INT NOT NULL,
     TripStartHourOfDay INT NOT NULL,
-	StartStationKey VARCHAR(50) NOT NULL,
-	EndStationKey VARCHAR(50) NOT NULL,
+	StartStationKey INT NOT NULL,
+	EndStationKey INT NOT NULL,
 	ElapsedTimeSeconds INT NOT NULL,
 	RiderAgeYears INT NOT NULL
 ) USING DELTA;
