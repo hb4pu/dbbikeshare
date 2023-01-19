@@ -1,7 +1,8 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Load (Silver)
+# MAGIC ## 03 - Silver Load
 # MAGIC Load from Bronze delta to Silver (delta or spark table?) 
+# MAGIC 
 # MAGIC Doing both delta and spark table to start
 
 # COMMAND ----------
@@ -29,12 +30,10 @@ dfbronzeriders.write.format("delta").mode("append") \
 #TODO: if saving as table, is there a way to organize with 'schema' or just prefix with 'silver_'?
 #TODO: should i be setting partition columns?
 
-#display(dfbronzeriders)
-
 # COMMAND ----------
 
 from pyspark.sql.functions import sha2
-#TODO: I am reusing dfbronze reference.  anything else i should do, cleanup mem usage or other?
+
 dfbronze = spark.read.format("delta") \
     .load("/delta/bronze/bronze_stations")
 

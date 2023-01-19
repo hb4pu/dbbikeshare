@@ -1,12 +1,12 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC #NOTES
+# MAGIC # Other Notes
 # MAGIC 
-# MAGIC 1. Random notes within
-# MAGIC 2. Workign with Azyre Synapse SQL Dedicated Pool (read and write to tables0
-# MAGIC HAD TO CREATE A MASTER ENCRYPTION KEY IN AZURE SYNAPSE SQL DED POOL:
-# MAGIC CREATE MASTER KEY ENCRYPTION BY PASSWORD = '23113ASJ#KL45641nl0DBd';
-# MAGIC 3. Did not use Azure Synapse since the rubric stated to 'should write to delta'
+# MAGIC ## Random notes within
+# MAGIC * Workign with Azyre Synapse SQL Dedicated Pool (read and write to tables)
+# MAGIC   * HAD TO CREATE A MASTER ENCRYPTION KEY IN AZURE SYNAPSE SQL DED POOL:
+# MAGIC   * CREATE MASTER KEY ENCRYPTION BY PASSWORD = '23113ASJ#KL45641nl0DBd';
+# MAGIC * Did not use Azure Synapse since the rubric stated to 'should write to delta'
 
 # COMMAND ----------
 

@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Extract (Bronze)
+# MAGIC # 02 - Bronze Ingest
 # MAGIC Extract information from CSV files stored in Databricks and write it to the Delta file system.
 
 # COMMAND ----------
@@ -33,7 +33,6 @@ df =  df.selectExpr(
 
 #write to bronze delta
 df.write.format("delta").mode("overwrite").save("/delta/bronze/bronze_riders")
-#TODO: is this named properly?  shows up without extension within delta\bronze folder, just looks like a folder with parquet files within
 
 # COMMAND ----------
 

@@ -1,4 +1,9 @@
 # Databricks notebook source
+# MAGIC %md
+# MAGIC ## 04 - Establish Date Dim in Delta
+
+# COMMAND ----------
+
 #https://www.bluegranite.com/blog/generate-a-calendar-dimension-in-spark
 
 from pyspark.sql.functions import explode, sequence, to_date

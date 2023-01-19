@@ -1,4 +1,11 @@
 -- Databricks notebook source
+-- MAGIC %md
+-- MAGIC ## 05 - Prepare Star Schema
+-- MAGIC 
+-- MAGIC This was done within spark sql destination
+
+-- COMMAND ----------
+
 CREATE SCHEMA Dim;
 CREATE SCHEMA Fact;
 

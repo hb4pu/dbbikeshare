@@ -1,7 +1,7 @@
 -- Databricks notebook source
 -- MAGIC %md
 -- MAGIC 
--- MAGIC #Transform Data - Load Dimensions
+-- MAGIC ## 06 Transform Data - Load Dimensions
 -- MAGIC 
 -- MAGIC Manufacture Keys using ROW_NUMBER function
 -- MAGIC 
