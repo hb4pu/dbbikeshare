@@ -162,7 +162,3 @@
 # MAGIC   on fp.RiderKey = dr.RiderKey
 # MAGIC group by dr.AccountStartAgeYears
 # MAGIC order by dr.AccountStartAgeYears;
-
-# COMMAND ----------
-
-
