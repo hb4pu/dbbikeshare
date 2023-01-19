@@ -4,7 +4,7 @@
 
 # COMMAND ----------
 
-#https://www.bluegranite.com/blog/generate-a-calendar-dimension-in-spark
+#Attribution - used this article to build date dim in spark: https://www.bluegranite.com/blog/generate-a-calendar-dimension-in-spark
 
 from pyspark.sql.functions import explode, sequence, to_date
 beginDate = '1937-01-01'

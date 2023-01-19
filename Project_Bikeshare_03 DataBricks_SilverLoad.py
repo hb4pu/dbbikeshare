@@ -27,9 +27,6 @@ dfbronzeriders.write.format("delta").mode("append") \
 dfbronzeriders.write.format("delta").mode("append") \
     .saveAsTable("silver_riders")
 
-#TODO: if saving as table, is there a way to organize with 'schema' or just prefix with 'silver_'?
-#TODO: should i be setting partition columns?
-
 # COMMAND ----------
 
 from pyspark.sql.functions import sha2
