@@ -10,6 +10,7 @@ CREATE TABLE Fact.Trip(
 	TripKey VARCHAR(36),
 	RiderKey INT,
 	TripStartDateKey INT NOT NULL,
+    TripStartHourOfDay INT NOT NULL,
 	StartStationKey VARCHAR(50) NOT NULL,
 	EndStationKey VARCHAR(50) NOT NULL,
 	ElapsedTimeSeconds INT NOT NULL,
