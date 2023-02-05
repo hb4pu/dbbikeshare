@@ -17,14 +17,14 @@ dfbronzeriders = dfbronzeriders.withColumn("row_sha2", sha2("rider_id", 256))
 
 #append data so that delta is updated with changes
 #save in delta format
-dfbronzeriders.write.format("delta").mode("append") \
+dfbronzeriders.write.format("delta").mode("overwrite") \
     .save("/delta/silver/silver_riders")
 
 #TODO: Should i be writing silver using saveastable so it shows up in Data > Database Tables or continue to store in DBFS?
 #TODO: what is behavior of overwrite vs append.  Can those be used for merging data (upsert & delete)?
 
 #save in spark table
-dfbronzeriders.write.format("delta").mode("append") \
+dfbronzeriders.write.format("delta").mode("overwrite") \
     .saveAsTable("silver_riders")
 
 # COMMAND ----------
@@ -37,11 +37,11 @@ dfbronze = spark.read.format("delta") \
 dfbronze = dfbronze.withColumn("row_sha2", sha2("station_id", 256))
 
 #save in delta format
-dfbronze.write.format("delta").mode("append") \
+dfbronze.write.format("delta").mode("overwrite") \
     .save("/delta/silver/silver_stations")
 
 #save in spark table
-dfbronze.write.format("delta").mode("append") \
+dfbronze.write.format("delta").mode("overwrite") \
     .saveAsTable("silver_stations")
 
 # COMMAND ----------
@@ -54,11 +54,11 @@ dfbronze = spark.read.format("delta") \
 dfbronze = dfbronze.withColumn("row_sha2", sha2("payment_id", 256))
 
 #save in delta format
-dfbronze.write.format("delta").mode("append") \
+dfbronze.write.format("delta").mode("overwrite") \
     .save("/delta/silver/silver_payments")
 
 #save in spark table
-dfbronze.write.format("delta").mode("append") \
+dfbronze.write.format("delta").mode("overwrite") \
     .saveAsTable("silver_payments")
 
 # COMMAND ----------
@@ -71,9 +71,9 @@ dfbronze = spark.read.format("delta") \
 dfbronze = dfbronze.withColumn("row_sha2", sha2("trip_id", 256))
 
 #save in delta format
-dfbronze.write.format("delta").mode("append") \
+dfbronze.write.format("delta").mode("overwrite") \
     .save("/delta/silver/silver_trips")
 
 #save in spark table
-dfbronze.write.format("delta").mode("append") \
+dfbronze.write.format("delta").mode("overwrite") \
     .saveAsTable("silver_trips")

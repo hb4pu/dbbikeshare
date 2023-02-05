@@ -20,3 +20,6 @@
 # MAGIC * Within notebook 'Project_Bikeshare_03_DataBricks_SilverLoad' I am reusing dfbronze reference.  anything else i should do, cleanup mem usage, garbage cleanup, dispose, other?
 # MAGIC * Could not create nvarchar within databricks / sql table.  How to support double byte characters
 # MAGIC * Could not set column as nullable within databricks / sql table.  Are columns nullable by default. Was able to set NOT NULL constraint.
+# MAGIC 
+# MAGIC ##Code Review
+# MAGIC https://review.udacity.com/?utm_campaign=ret_000_auto_ndxxx_submission-reviewed&utm_source=blueshift&utm_medium=email&utm_content=reviewsapp-submission-reviewed&bsft_clkid=7b4feb9c-9d0b-437a-af92-3bacb052cb86&bsft_uid=59ec5124-ccc1-4238-952e-dfff97dab043&bsft_mid=1b5843cf-1e1c-4797-88d3-b5f6a2889d9a&bsft_eid=9db03216-353a-4a26-a4a5-9c6191839f62&bsft_txnid=9fdf7417-040d-48f6-bb28-0904f2acb96a&bsft_mime_type=html&bsft_ek=2023-01-19T23%3A36%3A50Z&bsft_aaid=8d7e276e-4a10-41b2-8868-423fe96dd6b2&bsft_lx=3&bsft_tv=19#!/reviews/3920290

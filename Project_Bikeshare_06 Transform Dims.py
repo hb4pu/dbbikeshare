@@ -51,8 +51,7 @@
 # MAGIC TRUNCATE TABLE Dim.Rider;
 # MAGIC 
 # MAGIC INSERT INTO Dim.Rider(
-# MAGIC   RiderKey
-# MAGIC   ,RemoteSystemRiderID
+# MAGIC   RemoteSystemRiderID
 # MAGIC   ,FirstName
 # MAGIC   ,LastName
 # MAGIC   ,BirthDateKey
@@ -64,8 +63,7 @@
 # MAGIC   ,IsActiveAccount
 # MAGIC   )
 # MAGIC SELECT 
-# MAGIC   ROW_NUMBER() over (order by rider_id) RiderKey
-# MAGIC   , r.rider_id RemoteSystemRiderID
+# MAGIC   r.rider_id RemoteSystemRiderID
 # MAGIC   , r.first FirstName
 # MAGIC   , r.last LastName
 # MAGIC   , date_format(r.birthday, 'yyyyMMdd') BirthDateKey
@@ -83,15 +81,13 @@
 # MAGIC TRUNCATE TABLE Dim.Station;
 # MAGIC 
 # MAGIC INSERT INTO Dim.Station(
-# MAGIC   StationKey
-# MAGIC   , RemoteSystemStationID
+# MAGIC   RemoteSystemStationID
 # MAGIC   , StationName
 # MAGIC   , Latitude
 # MAGIC   , Longitude
 # MAGIC   )
 # MAGIC SELECT 
-# MAGIC   ROW_NUMBER() OVER (ORDER BY s.station_id) StationKey
-# MAGIC   , s.station_id RemoteSystemStationID
+# MAGIC   s.station_id RemoteSystemStationID
 # MAGIC   , s.name StationName
 # MAGIC   , s.latitude   Latitude
 # MAGIC   , s.longitude   Longitude

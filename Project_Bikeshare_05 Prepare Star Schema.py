@@ -37,7 +37,7 @@
 # MAGIC 
 # MAGIC DROP TABLE IF EXISTS Dim.Station;
 # MAGIC CREATE TABLE Dim.Station(
-# MAGIC 	StationKey int,
+# MAGIC 	StationKey BIGINT GENERATED ALWAYS AS IDENTITY,
 # MAGIC 	RemoteSystemStationID varchar(50),
 # MAGIC 	StationName varchar(250),
 # MAGIC 	Latitude float,
@@ -46,7 +46,7 @@
 # MAGIC 
 # MAGIC DROP TABLE IF EXISTS Dim.Rider;
 # MAGIC CREATE TABLE Dim.Rider(
-# MAGIC 	RiderKey int,
+# MAGIC 	RiderKey BIGINT GENERATED ALWAYS AS IDENTITY,
 # MAGIC 	RemoteSystemRiderID int,
 # MAGIC 	FirstName varchar(100),
 # MAGIC 	LastName varchar(100),

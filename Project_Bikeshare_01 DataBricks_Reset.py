@@ -8,7 +8,7 @@
 dbutils.fs.rm("/delta/bronze",recurse=True)
 dbutils.fs.rm("/delta/gold",recurse=True)
 dbutils.fs.rm("/delta/silver",recurse=True)
-dbutils.fs.rm("/Filestore/bikeshare",recurse=True)
+#dbutils.fs.rm("/Filestore/bikeshare",recurse=True)
 
 # COMMAND ----------
 

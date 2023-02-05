@@ -3,16 +3,42 @@
 # MAGIC # Other Notes
 # MAGIC 
 # MAGIC ## Random notes within
-# MAGIC * Workign with Azyre Synapse SQL Dedicated Pool (read and write to tables)
+# MAGIC * Workign with Azure Synapse SQL Dedicated Pool (read and write to tables)
 # MAGIC   * HAD TO CREATE A MASTER ENCRYPTION KEY IN AZURE SYNAPSE SQL DED POOL:
 # MAGIC   * CREATE MASTER KEY ENCRYPTION BY PASSWORD = '23113ASJ#KL45641nl0DBd';
 # MAGIC * Did not use Azure Synapse since the rubric stated to 'should write to delta'
+# MAGIC * Get history info on delta table
+# MAGIC 
+# MAGIC ##Tips
+# MAGIC * TO use PBI, open partner connect -> Power BI -> download connection file
+# MAGIC * Had to turn off ZScaler Internet security, got further still received load on failure
 
 # COMMAND ----------
 
-#How to load table into spark df
-dfgoldriders = spark.table("silver_riders")
-display(dfgoldriders)
+#How to load table into spark df and some basic data frame commands.  more info can be found here https://www.analyticsvidhya.com/blog/2016/10/spark-dataframe-and-operations/
+dfsilverriders = spark.table("silver_riders")
+display(dfsilverriders)
+
+dfsilverriders = spark.read.format("delta") \
+    .load("/delta/silver/silver_riders")
+
+dfsilverriders.printSchema()
+dfsilverriders.count()
+dfsilverriders.describe().show()
+dfsilverriders.crosstab('rider_id', 'is_member').show()
+
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC 
+# MAGIC DESCRIBE HISTORY '/delta/silver/silver_riders/'          -- get the full history of the table
+# MAGIC 
+# MAGIC DESCRIBE HISTORY delta.`/data/events/`
+# MAGIC 
+# MAGIC DESCRIBE HISTORY '/data/events/' LIMIT 1  -- get the last operation only
+# MAGIC 
+# MAGIC DESCRIBE HISTORY eventsTable
 
 # COMMAND ----------
 
