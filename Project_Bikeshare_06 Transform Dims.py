@@ -43,7 +43,7 @@
 # MAGIC   , DayOfMonth
 # MAGIC   , DayOfYear
 # MAGIC   , QuarterOfYear
-# MAGIC FROM delta.`/delta/gold/gold_dates`;
+# MAGIC FROM delta.`/delta/silver/silver_dates`;
 
 # COMMAND ----------
 
@@ -69,7 +69,7 @@
 # MAGIC   , date_format(r.birthday, 'yyyyMMdd') BirthDateKey
 # MAGIC   , date_format(r.account_start_date, 'yyyyMMdd') AccountStartDateKey
 # MAGIC   , date_format(r.account_end_date, 'yyyyMMdd') AccountEndDateKey
-# MAGIC   , floor(datediff(now(), r.birthday)/365.0, 0) LivingAgeYears
+# MAGIC   , floor(datediff(r.account_start_date, r.birthday)/365.0, 0) LivingAgeYears
 # MAGIC   , floor(datediff(r.account_start_date, r.birthday)/365.0, 0) AccountStartAgeYears
 # MAGIC   , CASE WHEN r.is_member = 'True' THEN 'Y' ELSE 'N' END IsMember
 # MAGIC   , CASE WHEN r.account_end_date IS NULL THEN 'Y' ELSE 'N' END IsActiveAccount

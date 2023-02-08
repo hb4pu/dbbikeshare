@@ -15,7 +15,7 @@
 # MAGIC 
 # MAGIC ##EXTRA CREDIT - Analyze how much money is spent per member
 # MAGIC * Based on how many rides the rider averages per month
-# MAGIC * Based on how many minutes the rider spends on a bike per month
+# MAGIC * Based on how many minutes the rider spends on a bike per month 
 
 # COMMAND ----------
 

@@ -18,9 +18,9 @@ endDate = '2050-12-31'
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC create or replace table gold_dates
+# MAGIC create or replace table silver_dates
 # MAGIC using delta
-# MAGIC location '/delta/gold/gold_dates'
+# MAGIC location '/delta/silver/silver_dates'
 # MAGIC as select
 # MAGIC   year(calendarDate) * 10000 + month(calendarDate) * 100 + day(calendarDate) as DateKey,
 # MAGIC   CalendarDate,

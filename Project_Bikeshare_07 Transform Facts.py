@@ -51,10 +51,12 @@
 # MAGIC   , startstation.StationKey                                   StartStationKey
 # MAGIC   , endstation.StationKey                                     EndStationKey
 # MAGIC   , datediff(SECOND, trip.start_at, trip.ended_at)            ElapsedTimeSeconds
-# MAGIC   , rider.LivingAgeYears                                      RiderAgeYears
+# MAGIC   , floor(datediff(trip.start_at, riderBirthDay.CalendarDate)/365.0, 0)   RiderAgeYears
 # MAGIC FROM silver_trips trip
 # MAGIC LEFT JOIN Dim.Rider rider
 # MAGIC   ON trip.rider_id = rider.RemoteSystemRiderID
+# MAGIC LEFT JOIN Dim.Dates riderBirthDay
+# MAGIC   ON rider.BirthDateKey = riderBirthDay.DateKey
 # MAGIC LEFT JOIN Dim.Station startstation
 # MAGIC   ON trip.start_station_id = startstation.RemoteSystemStationID
 # MAGIC LEFT JOIN Dim.Station endstation

@@ -20,9 +20,6 @@ dfbronzeriders = dfbronzeriders.withColumn("row_sha2", sha2("rider_id", 256))
 dfbronzeriders.write.format("delta").mode("overwrite") \
     .save("/delta/silver/silver_riders")
 
-#TODO: Should i be writing silver using saveastable so it shows up in Data > Database Tables or continue to store in DBFS?
-#TODO: what is behavior of overwrite vs append.  Can those be used for merging data (upsert & delete)?
-
 #save in spark table
 dfbronzeriders.write.format("delta").mode("overwrite") \
     .saveAsTable("silver_riders")
